@@ -1,0 +1,38 @@
+---
+title: "Module4B"
+editor: visual
+---
+```{r}
+#Setup
+#Make sure packages are installed
+#Load required packages
+library(ggplot2)
+library(dplyr)
+library(purrr)
+library(lubridate)
+library(here)
+
+#Set seed for reproducibility
+set.seed(123)
+#Define number of observations (patients) to generate
+n_patients <- 100
+```
+
+```{r}
+#Generate data
+
+#Create empty data frame with placeholders for variables
+syn_dat <- data.frame(
+  PatientID = numeric(n_patients),
+  Age = numeric(n_patients),
+  Gender = character(n_patients),
+  TreatmentGroup = character(n_patients),
+  EnrollmentDate = lubridate::as_date(character(n_patients)),
+  BloodPressure = numeric(n_patients),
+  AdverseEvent = integer(n_patients),
+)
+
+#Variable #1: PatientID
+syn_dat$PatientID <- 1:n_patients
+
+#Variable #2: Age (numeric value)
